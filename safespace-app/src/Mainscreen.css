@@ -1,0 +1,7 @@
+.Mainscreen {
+    background-image: url(./assets/livingroom.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 1920; /* Full viewport width */
+    height: 1080; /* Full viewport height */
+}
