@@ -2,12 +2,12 @@
 import fetch from "node-fetch"
 import readlineSync from "readline-sync"
 
-const WIT_AI_TOKEN = 'YOUR_WIT_AI_SERVER_ACCESS_TOKEN';
+const WIT_AI_TOKEN = 'G566DELNKNUW737UPXLK4TSXERST77QR';
 
 async function getWitResponse(message) {
   const response = await fetch(`https://api.wit.ai/message?v=20210626&q=${encodeURIComponent(message)}`, {
     headers: {
-      Authorization: `Bearer ${WIT_AI_TOKEN}`,
+      Authorization: `Bearer ${'G566DELNKNUW737UPXLK4TSXERST77QR'}`,
       'Content-Type': 'application/json'
     }
   });
@@ -17,11 +17,16 @@ async function getWitResponse(message) {
 }
 
 async function main() {
-  console.log('Welcome to the Wit.ai chatbot!');
+  console.log('Welcome to SafeSpace!');
+  console.log('What is your name?');
   while (true) {
-    const userInput = readlineSync.question('You: ');
-    if (userInput.toLowerCase() === 'exit') {
-      console.log('Goodbye!');
+    const NameInput = readlineSync.question('You: ');
+    console.log('Hello  ' + NameInput + ', what are three comforting subjects for you?');
+    const user_2Input = readlineSync.question('You: ');
+
+  
+    if (user_2Input.toLowerCase() === 'exit') {
+      console.log('Now generating your SafeSpace');
       break;
     }
 
