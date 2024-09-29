@@ -113,4 +113,3 @@ export async function auth(){
        document.getElementById("url").innerText = profile.href;
        document.getElementById("url").setAttribute("href", profile.href);
     }
-    
