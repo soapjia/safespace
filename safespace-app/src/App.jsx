@@ -8,6 +8,13 @@ import Mainscreen from './Mainscreen';
 
 
 function App() {
+
+  const [showMainscreen, setShowMainscreen] = useState(false);
+
+  const handleChatbotSubmit = () => {
+    setShowMainscreen(true); // Show Mainscreen when the chatbot is submitted
+  };
+  
   return (
     <div>
       <BrowserRouter>

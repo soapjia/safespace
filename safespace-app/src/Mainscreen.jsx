@@ -12,82 +12,81 @@ import console from './assets/console.png';
 import tv from './assets/tv.png';
 import soccer from './assets/soccer.png';
 
-let userItems = ["Plant", "Music", "Animals", "Beauty", "Books", "Food", "Education", "Games", "Entertainment", "Sports"];
 
 let availableItems = [
     { 
         id: 1, 
-        name: 'Plant', 
+        name: 'plants', 
         position: {x: 65, y: 397}, 
         image: plant,
         description: 'https://www.youtube.com/embed/9ZheoFblBpA?si=yNwE_WpdTbDjNrY2' // Unique description for the pop-up
     },
     { 
         id: 2, 
-        name: 'Music', 
+        name: 'music', 
         position: {x: 1000, y: 290}, 
         image: guitar,
         description: 'https://open.spotify.com/embed/playlist/5OQdBlbYq41msjU0Z4w0dR?utm_source=generator'
     },
     { 
         id: 3, 
-        name: 'Animals', 
+        name: 'animals', 
         position: {x: 840, y: 400}, 
         image: dog,
         description: 'https://www.htmlgames.com/game/Hunting+Jack+-+At+Home' 
     },
     { 
         id: 4, 
-        name: 'Beauty', 
+        name: 'beauty', 
         position: {x: 425, y: 372}, 
         image: makeupbag,
         description: 'https://www.allure.com/gallery/best-foundations-for-acne-prone-skin' 
     },
     { 
         id: 5, 
-        name: 'Books', 
+        name: 'books', 
         position: {x: 520, y: 430}, 
         image: book,
         description: 'https://abcnews.go.com/International/wireStory/japanese-fans-bid-farewell-beloved-panda-pair-return-114310836'
     },
     { 
         id: 6, 
-        name: 'Food', 
+        name: 'food', 
         position: {x: 660, y: 375}, 
         image: pasta,
         description: 'https://www.youtube.com/embed/Ew-3-8itpjc?si=cQxPb0Rlrz7MCfCf'
     },
     { 
         id: 7, 
-        name: 'Education', 
+        name: 'learning', 
         position: {x: 535, y: 147}, 
         image: space,
         description: 'https://www.youtube.com/embed/xuCn8ux2gbs?si=sD5cefyI8k5q7dID'
     },
     { 
         id: 8, 
-        name: 'Games', 
+        name: 'games', 
         position: {x: 760, y: 405}, 
         image: console,
         description: 'https://cdn.htmlgames.com/ZigZagGate/'
     },
     { 
         id: 9, 
-        name: 'Entertainment', 
+        name: 'entertainment', 
         position: {x: 870, y: 250}, 
         image: tv,
         description: 'https://www.youtube.com/embed/xdHx1YEsWwk?si=OWJIsaw5Ig60gx5z'
     },
     { 
         id: 10, 
-        name: 'Sports', 
+        name: 'sports', 
         position: {x: 240, y: 455}, 
         image: soccer,
         description: 'https://www.youtube.com/embed/A-r9sj7zHJ4?si=YDgZAANAww10aOWs'
     },
 ];
 
-function Mainscreen() {
+function Mainscreen({userItems = []}) {
     const [selectedItem, setSelectedItem] = useState(null);
 
     const closePopup = () => {
@@ -103,7 +102,7 @@ function Mainscreen() {
     return (
       <div className="Mainscreen">
         <div className="header">
-          <h1>welcome to your safe space!</h1>
+          <h1>Welcome to your safe space! Click around to explore.</h1>
         </div>
         <div className="livingarea">
           {userItemDetails.map(item => (
@@ -131,9 +130,9 @@ function Mainscreen() {
                     height="400"
                     title="Web View"
                   ></iframe>
-                <button onClick={closePopup}>Close</button>
+
               </div> 
-          
+              <button onClick={closePopup} className='close-button'>Close</button>          
             </div>
           )}
         </div>

@@ -1,5 +1,4 @@
 .chatbot {
-
     background-image: url('./assets/Chatbot_Background.jpg');
     background-size: cover;
     background-position: center;
@@ -7,19 +6,21 @@
     /*background-color: #5B7C99;
     /*padding: 50px;*/
     color:white;
-    border: 2px dashed red;
+    border: 4px solid #cc89a5;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 1300px;
-    height: 670px;
+    width: 75rem;
+    height: 33rem;
     align-items: center;
-}
-
-.description {
+    border-radius: 50px;
+ }
+ 
+ 
+ .description {
     color: #5B7C99;
     background-color: white;
-    border: 2px dashed red;
+    border: 4px solid #cc89a5;
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 20px;
@@ -29,74 +30,42 @@
     border-radius: 40px;
     font-size: 25px;
     font-weight:bold;
-}
-
-.input-large {
-    border: 2px dashed red;
+ }
+ 
+ 
+ .subtext {
+    color: #5B7C99;
+    background-color: white;
+    border: 4px solid #cc89a5;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 20px;
+    width: 600px;
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight:bold;
+ }
+ 
+ 
+ .input-large {
+    border: 4px solid #cc89a5;
     width: 500px;
-    height: 300px;
+    height: 200px;
     text-align:left;
     padding: 50px;
     border-radius: 40px;
-}
-
-.send-button {
+ }
+ 
+ 
+ .send-button {
     margin: 30px;
-}
-
-.form-container {
+ }
+ 
+ 
+ .form-container {
     display: flex;
     flex-direction: column;
-   background-image: url('./assets/Chatbot_Background.jpg');
-   background-size: cover;
-   background-position: center;
-   background-repeat: no-repeat;
-   /*background-color: #5B7C99;
-   /*padding: 50px;*/
-   color:white;
-   border: 2px dashed red;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   width: 1300px;
-   height: 670px;
-   align-items: center;
-}
-
-
-.description {
-   color: #5B7C99;
-   background-color: white;
-   border: 2px dashed red;
-   padding-left: 30px;
-   padding-right: 30px;
-   padding-top: 20px;
-   padding-bottom: 20px;
-   margin: 20px;
-   width: 600px;
-   border-radius: 40px;
-   font-size: 25px;
-   font-weight:bold;
-}
-
-
-.input-large {
-   border: 2px dashed red;
-   width: 500px;
-   height: 300px;
-   text-align:left;
-   padding: 50px;
-   border-radius: 40px;
-}
-
-
-.send-button {
-   margin: 30px;
-}
-
-
-.form-container {
-   display: flex;
-   flex-direction: column;
-}
-
+ }
+ 

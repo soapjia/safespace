@@ -12,8 +12,10 @@
   "description": "",
   "dependencies": {
     "node-fetch": "^3.3.2",
+    "react-redux": "^9.1.2",
     "react-responsive": "^10.0.0",
-    "readline-sync": "^1.4.10"
+    "readline-sync": "^1.4.10",
+    "redux": "^5.0.1"
   },
   "devDependencies": {
     "vite": "^5.4.8"
