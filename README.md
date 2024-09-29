@@ -1,6 +1,8 @@
 # SafeSpace Web App
-<img width="100%" src="https://github.com/soapjia/safespace/blob/main/safespace-app/src/assets/safespace1.jpg" alt="cover" /> 
-<img width="100%" src="https://github.com/soapjia/safespace/blob/main/safespace-app/src/assets/safespace2.jpg" alt="cover" /> 
+<img width="100%" src="https://github.com/soapjia/safespace/blob/main/safespace-app/src/assets/safespace1.png" alt="cover" /> 
+<img width="100%" src="https://github.com/soapjia/safespace/blob/main/safespace-app/src/assets/safespace2.png" alt="cover" /> 
+<img width="100%" src="https://github.com/soapjia/safespace/blob/main/safespace-app/src/assets/safespace3.png" alt="cover" /> 
+
 SafeSpace takes all your favourite comfort activities 
 and brings them to you in one place. Within seconds, 
 create your own safe space with all your comfort objects 
