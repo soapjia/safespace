@@ -2,7 +2,6 @@
   "name": "safespace",
   "version": "1.0.0",
   "main": "index.js",
-
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,6 +12,10 @@
   "description": "",
   "dependencies": {
     "node-fetch": "^3.3.2",
+    "react-responsive": "^10.0.0",
     "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "vite": "^5.4.8"
   }
 }
