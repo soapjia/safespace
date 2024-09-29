@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
 .Mainscreen {
-    border: 2px dashed red;
+    border: 4px solid #cc89a5;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,12 +10,12 @@
 }
 
 .header {
-    border: 2px dashed red;
     font-size: 0.5rem;
+    color: #a15575;
+    font-family: 'Poppins', sans-serif;
 }
 
 .livingarea {
-    border: 2px dashed red; 
     background-size: cover;
     background-image: url(./assets/livingroom.jpg);
     height: 50rem;
