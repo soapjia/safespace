@@ -18,3 +18,32 @@
     background-image: url(./assets/livingroom.jpg);
     height: 50rem;
 }
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.object {
+    cursor: pointer; /* Change the cursor to indicate it is clickable */
+    transition: transform 0.3s, opacity 0.3s; /* Smooth transition for hover effects */
+}
+
+.object:hover {
+    transform: scale(1.05); /* Slightly increase the size on hover */
+    opacity: 0.8; /* Change opacity on hover */
+}
