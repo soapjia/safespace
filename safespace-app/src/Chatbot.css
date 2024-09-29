@@ -16,7 +16,7 @@
 }
 
 .description {
-    color: #5B7C99;
+    color: #b8517f;
     background-color: white;
     border: 2px dashed red;
     padding-left: 30px;
@@ -41,6 +41,11 @@
 
 .send-button {
     margin: 30px;
+    color: #b8517f;
+}
+
+.send-button:hover {
+    color: black;
 }
 
 .form-container {

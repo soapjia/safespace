@@ -41,7 +41,7 @@ export default function Chatbot() {
                 onKeyDown={handleKeyDown}
             
             />
-            <button type="submit" className="send-button">Send</button>
+            <button type="submit" className="send-button">Submit</button>
         </form>
 
 
