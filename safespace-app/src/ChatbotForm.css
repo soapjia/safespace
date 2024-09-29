@@ -47,8 +47,6 @@
 .form-container {
     display: flex;
     flex-direction: column;
-}
-=======
    background-image: url('./assets/Chatbot_Background.jpg');
    background-size: cover;
    background-position: center;
