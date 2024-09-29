@@ -1,81 +1,116 @@
-export async function auth() {
+
+
+export async function auth(){
+
     const clientId = "9a61ff0ba7514e08b89fc11e373e837a"; // Replace with your client id
     const params = new URLSearchParams(window.location.search);
     const code = params.get("code");
-
+    
+    
     if (!code) {
-        redirectToAuthCodeFlow(clientId);
+       redirectToAuthCodeFlow(clientId);
     } else {
-        const accessToken = await getAccessToken(clientId, code);
-        const profile = await fetchProfile(accessToken);
-        const playlists = await fetchPlaylists(accessToken); // Fetch playlists
-        console.log(profile);
-        populateUI(profile);
-        return { accessToken, playlists }; // Return access token and playlists
+       const accessToken = await getAccessToken(clientId, code);
+       const profile = await fetchProfile(accessToken);
+       console.log(profile);
+       populateUI(profile);
     }
-}
+    }
+    
 
-export async function fetchPlaylists(accessToken) {
-    const response = await fetch('https://api.spotify.com/v1/me/playlists', {
-      headers: {
-        Authorization: `Bearer ${accessToken}`
-      }
-    });
-    const data = await response.json();
-    return data.items; // Return an array of playlists
-  }
-   
+    
     export async function redirectToAuthCodeFlow(clientId) {
        const verifier = generateCodeVerifier(128);
        const challenge = await generateCodeChallenge(verifier);
-   
-   
+    
+    
        localStorage.setItem("verifier", verifier);
-   
-   
+    
+    
        const params = new URLSearchParams();
        params.append("client_id", clientId);
        params.append("response_type", "code");
        params.append("redirect_uri", "http://localhost:5173/Mainscreen");
-       params.append("scope", "user-read-private user-read-email playlist-read-private");
+       params.append("scope", "user-read-private user-read-email");
        params.append("code_challenge_method", "S256");
        params.append("code_challenge", challenge);
-   
-   
+    
+    
        document.location = `https://accounts.spotify.com/authorize?${params.toString()}`;
     }
-   
-   
+    
+    
     function generateCodeVerifier(length) {
        let text = '';
        let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-   
-   
+    
+    
        for (let i = 0; i < length; i++) {
            text += possible.charAt(Math.floor(Math.random() * possible.length));
        }
        return text;
     }
-   
-   
+    
+    
     async function generateCodeChallenge(codeVerifier) {
        const data = new TextEncoder().encode(codeVerifier);
-    }
-
-    async function fetchProfile(accessToken) {
-        const response = await fetch('https://api.spotify.com/v1/me', {
-            headers: {
-                Authorization: `Bearer ${accessToken}`
-            }
-        });
-        return response.json();
-    }
-
-    export async function getAccessToken(clientId, code) {
-        const verifier = localStorage.getItem("verifier");
+       const digest = await window.crypto.subtle.digest('SHA-256', data);
+       return btoa(String.fromCharCode.apply(null, [...new Uint8Array(digest)]))
+           .replace(/\+/g, '-')
+           .replace(/\//g, '_')
+           .replace(/=+$/, '');
     }
     
-    function populateUI(profile) {
-        console.log("User Profile:", profile);
-        // You can implement UI changes based on profile data here if needed
+    
+    
+    
+    export async function getAccessToken(clientId, code) {
+       const verifier = localStorage.getItem("verifier");
+    
+    
+       const params = new URLSearchParams();
+       params.append("client_id", clientId);
+       params.append("grant_type", "authorization_code");
+       params.append("code", code);
+       params.append("redirect_uri", "http://localhost:5173/Mainscreen");
+       params.append("code_verifier", verifier);
+    
+    
+       const result = await fetch("https://accounts.spotify.com/api/token", {
+           method: "POST",
+           headers: { "Content-Type": "application/x-www-form-urlencoded" },
+           body: params
+       });
+    
+    
+       const { access_token } = await result.json();
+       return access_token;
     }
+    
+    
+    async function fetchProfile(token) {
+       const result = await fetch("https://api.spotify.com/v1/me", {
+           method: "GET", headers: { Authorization: `Bearer ${token}` }
+       });
+    
+    
+       return await result.json();
+    }
+    
+    
+    function populateUI(profile) {
+       document.getElementById("displayName").innerText = profile.display_name;
+       if (profile.images[0]) {
+           const profileImage = new Image(200, 200);
+           profileImage.src = profile.images[0].url;
+           document.getElementById("avatar").appendChild(profileImage);
+           document.getElementById("imgUrl").innerText = profile.images[0].url;
+       }
+       document.getElementById("id").innerText = profile.id;
+       document.getElementById("email").innerText = profile.email;
+       document.getElementById("uri").innerText = profile.uri;
+       document.getElementById("uri").setAttribute("href", profile.external_urls.spotify);
+       document.getElementById("url").innerText = profile.href;
+       document.getElementById("url").setAttribute("href", profile.href);
+    }
+    
