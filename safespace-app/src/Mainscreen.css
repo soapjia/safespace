@@ -1,7 +1,20 @@
 .Mainscreen {
-    background-image: url(./assets/livingroom.jpg);
+    border: 2px dashed red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75rem;
+    height: 30rem;
+}
+
+.header {
+    border: 2px dashed red;
+    font-size: 0.5rem;
+}
+
+.livingarea {
+    border: 2px dashed red; 
     background-size: cover;
-    background-position: center;
-    width: 1920; /* Full viewport width */
-    height: 1080; /* Full viewport height */
+    background-image: url(./assets/livingroom.jpg);
+    height: 50rem;
 }
