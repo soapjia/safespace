@@ -31,8 +31,8 @@ For the AI model setup:
 
 ### Running the Program
 
-* The class called "HomeScreen" can be run through an IDE to run the program.
-* Otherwise, the program can be converted into a jar file to be run without an IDE.
+1. The project needs to be compiled using *npm run dev*, it can be accessed
+   on your local port
 
 
 # Authors
